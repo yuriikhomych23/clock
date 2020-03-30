@@ -9,35 +9,60 @@
 </head>
 <body>
 
-    <div class="time">
+<div class="container">
 
-        <div class="day"></div>
+                <div class="first__block">
+                    <div class="day"></div>
+                    <div class="times"></div>   
+                </div>
 
-        <div class="times"></div>
+
+                <div class="second__block">
+                    <div class="stopwatch">
+                        <div class="timer">00:00:00:000</div>
+                        <div class="stopwatch__btn">
+                            <button type="button" id="start">Start</button>
+                            <button type="button" id="loop">Loop</button>
+                            <button type="button" id="stop">Stop</button>
+                            <button type="button" id="reset">Reset</button>
+                        </div>
+                    </div>
+                    <div class="result"></div>
+                </div>
+
+
+                <div class="third__block">
             
-    </div>
+                        <div class="stowatch__minutes">
+                            <div class="counting">25</div>
+                            <div class="text__minutes">MINUTES</div>
+                            <div class="btn__plus__minus">
+                                <button class="plus">+</button>
+                                <button class="minus">-</button>
+                            </div>
+                        </div>
 
-    <div class="second__box">
-    
-        <div class="stopwatch">
-        
-            <div class="zero">00:00:00:000</div>
 
-            <div class="btn">
-                <input type="button" value="Start" name="start" id="start">
-                <input type="button" value="Loop" name="loop" id="loop">
-                <input type="button" value="Stop" name="stop" id="stop">
-                <input type="button" value="Reset" name="reset" id="reset">
-            </div>
+                        <div class="timer__stopwatch">
 
-        </div>
+                            <div class="countdown">00:00</div>
+                            
+                            <div class="timer__btn">
+                                <button class="start__timer">Start</button>
+                                <button class="stop__timer">Stop</button>
+                                <button class="reset__timer">Reset</button>
+                            </div>
+                        
+                        </div>
+                    
 
-        <div class="result"></div>
-    
-    
-    </div>
 
-    <div class="clock"></div>
+                
+
+
+                </div>
+
+</div>
 
     <script src="main.js"></script>
 </body>
