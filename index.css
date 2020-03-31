@@ -126,7 +126,6 @@ button{
     height: 80%;
     display: flex;
     justify-content: space-around;
-    /* text-align: center; */
     flex-wrap: wrap;
 }
 

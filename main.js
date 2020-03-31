@@ -106,7 +106,6 @@ let btnMinus = document.querySelector('.minus')
 
 
 let counting = document.querySelector('.counting');
-let countingTimer = counting.innerHTML;
 
 //BTN PLUS
 btnPlus.addEventListener('click', function() {
@@ -116,7 +115,7 @@ btnPlus.addEventListener('click', function() {
 //BTN MINUS
 btnMinus.addEventListener('click', function(){
     counting.innerHTML--;
-    if(counting.innerHTML == 0) {
+    if(counting.innerHTML < 1) {
         alert('Smaller countdown is impossible');
         counting.innerHTML = 1;
     }
@@ -129,30 +128,55 @@ let btnStopTimer = document.querySelector('.stop__timer');
 let btnResetTimer = document.querySelector('.reset__timer');
 
 
+
 let secondsTimer = 60;
-let countdown;
+let minuteTimer = counting.innerHTML - 1;
+
+let countdown = document.querySelector('.countdown');
+
+let cd; // countdown 
 
 //BTN START TIMER 
 btnStartTimer.addEventListener('click', function() {
-    countdown = setInterval(countdown, 1000)
+    cd = setInterval(countdownTimer, 1000)
+    minuteTimer = counting.innerHTML - 1;
+    console.log('start')
 })
 
 //BTN STOP TIMER 
 btnStopTimer.addEventListener('click', function() {
-    clearInterval(countdown);
+    clearInterval(cd);
+    console.log('stop')
 })
 
 //BTN RESET TIMER 
 btnResetTimer.addEventListener('click', function() {
-    clearInterval(countdown);
-    nuww.innerHTML = "00" + ":" + '00'
+    clearInterval(cd );
+    countdown.innerHTML = "00" + ":" + "00";
+
+    secondsTimer = 60;
+    
+    console.log('reset')
 })
 
 
-
 function countdownTimer() {
+    secondsTimer--;
+    if(secondsTimer == 0) {
+        minuteTimer--;
+        secondsTimer += 59;
+    }
+    if(minuteTimer < 0) {
+        countdown.innerHTML= "01" + ":" + "00";
+        clearInterval(cd);
+    }
 
+    if(secondsTimer < 10) secondsTimer = '0' + secondsTimer;
+    if(minuteTimer < 10) minuteTimer = '0' + parseFloat(minuteTimer);
+
+    countdown.innerHTML = minuteTimer + ':' + secondsTimer;
 }
+
 
 
 
